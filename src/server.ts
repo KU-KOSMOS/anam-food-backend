@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import { loggerStream } from './lib/logger';
 
 import controller from './controller';
+import errorHandler from './lib/errorHandler';
 
 const app = express();
 const { NODE_ENV } = process.env;
@@ -11,7 +12,9 @@ const { NODE_ENV } = process.env;
 const morganEnv = NODE_ENV !== 'production' ? 'dev' : 'combined';
 app.use(morgan(morganEnv, { stream: loggerStream }));
 app.use(express.json());
+/* TODO: urlencoded 추가 */
 
 app.use(controller);
+app.use(errorHandler);
 
 export default app;
