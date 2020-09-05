@@ -2,12 +2,26 @@
   "name": "anam-food-backend",
   "version": "1.0.0",
   "main": "index.ts",
+  "scripts": {
+    "prebuild": "tsc --build",
+    "build": "babel tsbuild --out-dir dist",
+    "start": "node dist/index.js",
+    "prod": "yarn build&& yarn start"
+  },
   "repository": "https://github.com/KU-KOSMOS/anam-food-backend.git",
   "author": "BeLeap <changseo_jang@korea.ac.kr>",
   "license": "MIT",
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-arrow-functions": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "eslint": "^7.8.1",
@@ -15,6 +29,8 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.1"
+    "prettier": "^2.1.1",
+    "tsc": "^1.20150623.0",
+    "typescript": "^4.0.2"
   }
 }
