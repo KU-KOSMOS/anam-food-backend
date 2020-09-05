@@ -1,4 +1,4 @@
-import winston, { createLogger, format, transports } from 'winston';
+import { createLogger, format, transports } from 'winston';
 import 'winston-daily-rotate-file';
 
 const { NODE_ENV } = process.env;
@@ -11,14 +11,14 @@ const transport = NODE_ENV !== 'production' ? [
         )
     })
 ] : [
-    new (winston.transports.DailyRotateFile)({
+    new transports.DailyRotateFile({
         filename: 'anam-food-backend-%DATE%.log',
         datePattern: 'YYYY-MM-DD-HH',
         zippedArchive: true,
         maxSize: '20m',
         maxFiles: '14d',
     }),
-    new (winston.transports.DailyRotateFile)({
+    new transports.DailyRotateFile({
         filename: 'error-anam-food-backend-%DATE%.log',
         datePattern: 'YYYY-MM-DD-HH',
         zippedArchive: true,
@@ -38,7 +38,14 @@ const logger = createLogger({
         format.json()
     ),
     defaultMeta: { service: 'anam-food-backend' },
-    transports: transport
+    transports: transport,
+    exitOnError: false
 });
+
+export const loggerStream = {
+    write: (message: string) => {
+        logger.info(message);
+    }
+}
 
 export default logger;
