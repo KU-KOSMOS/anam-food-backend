@@ -20,6 +20,7 @@
     "express": "^4.17.1",
     "joi": "^17.2.1",
     "morgan": "^1.10.0",
+    "pg": "^8.3.3",
     "typeorm": "^0.2.25",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
