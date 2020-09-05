@@ -6,8 +6,8 @@
     "prebuild": "tsc --build",
     "build": "babel tsbuild --out-dir dist",
     "start": "node dist/index.js",
-    "prod": "yarn build&& yarn start",
-    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "prod": "cross-env NODE_ENV=production yarn build&& yarn start",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --exec ts-node src/index.ts",
     "test": "eslint src/**/*.ts&& mocha"
   },
   "repository": "https://github.com/KU-KOSMOS/anam-food-backend.git",
@@ -15,7 +15,8 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@babel/polyfill": "^7.11.5"
+    "@babel/polyfill": "^7.11.5",
+    "cross-env": "^7.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
