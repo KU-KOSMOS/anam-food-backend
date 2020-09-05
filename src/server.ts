@@ -15,6 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(controller);
-app.use(errorHandler);
+app.use('/api', errorHandler);
 
 export default app;
