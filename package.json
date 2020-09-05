@@ -1,0 +1,9 @@
+{
+  "name": "anam-food-backend",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "https://github.com/KU-KOSMOS/anam-food-backend.git",
+  "author": "BeLeap <changseo_jang@korea.ac.kr>",
+  "license": "MIT",
+  "private": false
+}
