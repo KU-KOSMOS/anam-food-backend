@@ -12,7 +12,7 @@ const { NODE_ENV } = process.env;
 const morganEnv = NODE_ENV !== 'production' ? 'dev' : 'combined';
 app.use(morgan(morganEnv, { stream: loggerStream }));
 app.use(express.json());
-/* TODO: urlencoded 추가 */
+app.use(express.urlencoded({ extended: false }));
 
 app.use(controller);
 app.use(errorHandler);
