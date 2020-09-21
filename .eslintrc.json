@@ -11,7 +11,7 @@
     "plugins": ["@typescript-eslint"],
     "rules": {
         "prettier/prettier": "error",
-        "import/extensions": "never"
+        "import/extensions": "off"
     },
     "overrides": [
         {
