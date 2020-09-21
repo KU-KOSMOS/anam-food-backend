@@ -12,8 +12,9 @@
     "rules": {
         "prettier/prettier": "error",
         "import/extensions": "off",
-        "no-unused-expressions": "off",
-        "no-unresolved": "off"
+        "no-unused-vars": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off"
     },
     "overrides": [
         {
