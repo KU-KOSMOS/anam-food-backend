@@ -16,11 +16,11 @@ class Review extends BaseEntity {
 
     @ManyToOne((type) => User)
     @JoinColumn({ name: 'createdUser', referencedColumnName: 'id' })
-    user!: User;
+    createdUser!: User;
 
     @ManyToOne((type) => Store)
     @JoinColumn({ name: 'targetStore', referencedColumnName: 'id' })
-    store!: Store;
+    targetStore!: Store;
 
     @Column({ length: 1 })
     rating!: number;

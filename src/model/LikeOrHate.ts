@@ -15,11 +15,11 @@ class LikeOrHate extends BaseEntity {
 
     @ManyToOne((type) => User)
     @JoinColumn({ name: 'createdUser', referencedColumnName: 'id' })
-    user!: User;
+    createdUser!: User;
 
     @ManyToOne((type) => Review)
     @JoinColumn({ name: 'targetReview', referencedColumnName: 'id' })
-    review!: Review;
+    targetReview!: Review;
 
     @Column()
     like!: boolean;
