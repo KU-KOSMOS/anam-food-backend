@@ -1,5 +1,5 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-import { TimeDuration, PriceRange } from '../types/store';
+import { WorkDay, PriceRange } from '../types/store';
 
 @Entity()
 class Store extends BaseEntity {
@@ -22,7 +22,7 @@ class Store extends BaseEntity {
     location!: string;
 
     @Column()
-    workTime!: TimeDuration;
+    workTime!: WorkDay;
 
     @Column()
     pricingRange!: PriceRange;
