@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+    db:
+        image: postgres
+        volumes:
+            - ./docker/data:/var/lib/postgres/data
+        env_file:
+            - .env.db.docker
+
+    api:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - '3000:3000'
+        volumes:
+            - ./logs:/anam-food-backend/logs
+        command:
+            - bash
+            - -c
+            - |
+                ./wait-for-it.sh db:5432 -t 10
+                yarn prod
