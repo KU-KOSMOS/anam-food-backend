@@ -12,14 +12,14 @@ const transport =
           ]
         : [
               new transports.DailyRotateFile({
-                  filename: 'anam-food-backend-%DATE%.log',
+                  filename: 'logs/anam-food-backend-%DATE%.log',
                   datePattern: 'YYYY-MM-DD-HH',
                   zippedArchive: true,
                   maxSize: '20m',
                   maxFiles: '14d',
               }),
               new transports.DailyRotateFile({
-                  filename: 'error-anam-food-backend-%DATE%.log',
+                  filename: 'logs/error-anam-food-backend-%DATE%.log',
                   datePattern: 'YYYY-MM-DD-HH',
                   zippedArchive: true,
                   maxSize: '20m',
