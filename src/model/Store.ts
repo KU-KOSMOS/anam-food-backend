@@ -22,10 +22,10 @@ class Store extends BaseEntity {
     location!: string;
 
     @Column()
-    workTime!: WorkDay;
+    workTime!: string;
 
     @Column()
-    pricingRange!: PriceRange;
+    pricingRange!: string;
 
     @Column()
     enabled!: boolean;

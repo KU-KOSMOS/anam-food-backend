@@ -22,7 +22,7 @@ class Review extends BaseEntity {
     @JoinColumn({ name: 'targetStore', referencedColumnName: 'id' })
     targetStore!: Store;
 
-    @Column({ length: 1 })
+    @Column()
     rating!: number;
 
     @Column()
