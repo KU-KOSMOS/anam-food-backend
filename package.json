@@ -6,7 +6,6 @@
         "prebuild": "tsc --build",
         "build": "babel tsbuild --out-dir dist",
         "start": "node dist/src/index.js",
-        "preprod": "yarn build",
         "prod": "cross-env NODE_ENV=production yarn start",
         "dev": "cross-env NODE_ENV=development nodemon --watch src --exec ts-node src/index.ts",
         "test": "eslint src/**/*.ts"
