@@ -1,4 +1,5 @@
-node_modules/
-docker/
-dist/
-tsbuild/
+node_modules
+docker
+dist
+tsbuild
+.git
