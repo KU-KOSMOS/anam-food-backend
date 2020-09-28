@@ -1,6 +1,6 @@
 FROM node:12
 
-WORKDIR /anam-food-bakcend/
+WORKDIR /anam-food-backend/
 
 ARG CACHEBUST=1
 
