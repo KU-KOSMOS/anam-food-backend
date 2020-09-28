@@ -27,5 +27,6 @@ const dbInit = async () => {
         logger.error(`Error occurred during DB connection: ${err}`);
     }
 };
+dbInit();
 
 export default app;
