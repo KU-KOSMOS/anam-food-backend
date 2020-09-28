@@ -8,6 +8,8 @@ services:
             - ./docker/data:/var/lib/postgres/data
         env_file:
             - .env.db.docker
+        ports:
+            - '5432:5432'
 
     api:
         build:
