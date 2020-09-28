@@ -3,6 +3,7 @@ version: '3'
 services:
     db:
         image: postgres
+        restart: always
         volumes:
             - ./docker/data:/var/lib/postgres/data
         env_file:
@@ -12,6 +13,7 @@ services:
         build:
             context: .
             dockerfile: ./Dockerfile
+        restart: always
         ports:
             - '3000:3000'
         volumes:
