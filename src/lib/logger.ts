@@ -19,6 +19,7 @@ const transport =
                   maxFiles: '14d',
               }),
               new transports.DailyRotateFile({
+                  level: 'error',
                   filename: 'logs/error-anam-food-backend-%DATE%.log',
                   datePattern: 'YYYY-MM-DD-HH',
                   zippedArchive: true,
