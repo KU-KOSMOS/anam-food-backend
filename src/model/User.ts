@@ -9,6 +9,7 @@ import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
  * @property {boolean} isAdmin
  * @property {boolean} enabled
  */
+
 @Entity()
 class User extends BaseEntity {
     @PrimaryGeneratedColumn()
