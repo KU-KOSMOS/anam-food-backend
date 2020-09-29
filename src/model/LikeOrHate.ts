@@ -9,6 +9,15 @@ import {
 import User from './User';
 import Review from './Review';
 
+/**
+ * A LikeOrHate Type
+ * @typedef {object} LikeOrHate
+ * @property {number} id
+ * @property {User} createdUser
+ * @property {Review} targetReview
+ * @property {boolean} like
+ */
+
 @Entity()
 class LikeOrHate extends BaseEntity {
     @PrimaryGeneratedColumn()
