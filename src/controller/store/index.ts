@@ -1,8 +1,9 @@
 import { Router } from 'express';
+import { getStoreList, getStoreDetail } from './store.ctrl';
 
 const router = Router();
 
-router.get('/list');
-router.get('/detail/:storeId');
+router.get('/list', getStoreList);
+router.get('/detail/:storeId', getStoreDetail);
 
 export default router;
