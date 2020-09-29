@@ -5,14 +5,30 @@ import Store from '../../model/Store';
 
 const numberScheme = joi.number();
 
+/**
+ * A Store Type
+ * @typedef {object} StoreList
+ * @property {number} id
+ * @property {string} name
+ * @property {string} category
+ * @property {number} averageRating
+ */
+
+/**
+ * GET /api/store/list
+ * @summary get list of store
+ * @tags Store
+ * @return {array<StoreList>} 200 - Success response - application/json
+ */
 export const getStoreList: RequestHandler = async (_req, res, next) => {
     try {
         const storeList = await Store.find({
             where: {
                 enabled: true,
             },
+            select: ['id', 'name', 'category', 'averageRating'],
         });
-        res.json({ storeList });
+        res.json(storeList);
     } catch (err) {
         next(err);
     }
