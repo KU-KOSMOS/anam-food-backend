@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import cors from 'cors';
 
 import { createConnection } from 'typeorm';
 
@@ -13,6 +14,7 @@ const app = express();
 const { NODE_ENV } = process.env;
 
 const morganEnv = NODE_ENV !== 'production' ? 'dev' : 'combined';
+app.use(cors());
 app.use(morgan(morganEnv, { stream: loggerStream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
