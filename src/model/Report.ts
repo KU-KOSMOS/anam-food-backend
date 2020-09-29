@@ -8,6 +8,14 @@ import {
 import User from './User';
 import Review from './Review';
 
+/**
+ * A Report Type
+ * @typedef {object} Report
+ * @property {number} id
+ * @property {User} reporter
+ * @property {Review} reportedReview
+ */
+
 @Entity()
 class Report extends BaseEntity {
     @PrimaryGeneratedColumn()
