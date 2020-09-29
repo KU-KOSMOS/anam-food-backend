@@ -5,7 +5,7 @@ interface Error {
     msg: string;
 }
 
-const errorList = {
+const errorList: { [key: string]: Error } = {
     INTERNAL_SERVER_ERROR: {
         statusCode: 500,
         msg: 'Internal Server Error',
@@ -16,7 +16,7 @@ const errorList = {
     },
 };
 
-const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
     const errorMessage: string =
         err.message in errorList ? err.message : 'INTERNAL_SERVER_ERROR';
     const error: Error = errorList[errorMessage];

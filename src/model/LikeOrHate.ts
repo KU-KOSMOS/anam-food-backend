@@ -9,15 +9,16 @@ import {
 import User from './User';
 import Review from './Review';
 
+@Entity()
 class LikeOrHate extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @ManyToOne((type) => User)
+    @ManyToOne((_type) => User)
     @JoinColumn({ name: 'createdUser', referencedColumnName: 'id' })
     createdUser!: User;
 
-    @ManyToOne((type) => Review)
+    @ManyToOne((_type) => Review)
     @JoinColumn({ name: 'targetReview', referencedColumnName: 'id' })
     targetReview!: Review;
 

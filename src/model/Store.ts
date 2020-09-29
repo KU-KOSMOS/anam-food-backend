@@ -1,5 +1,4 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-import { WorkDay, PriceRange } from '../types/store';
 
 @Entity()
 class Store extends BaseEntity {

@@ -14,11 +14,11 @@ class Review extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;
 
-    @ManyToOne((type) => User)
+    @ManyToOne((_type) => User)
     @JoinColumn({ name: 'createdUser', referencedColumnName: 'id' })
     createdUser!: User;
 
-    @ManyToOne((type) => Store)
+    @ManyToOne((_type) => Store)
     @JoinColumn({ name: 'targetStore', referencedColumnName: 'id' })
     targetStore!: Store;
 

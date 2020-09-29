@@ -2,10 +2,9 @@ import express from 'express';
 import morgan from 'morgan';
 
 import { createConnection } from 'typeorm';
-import expressJSDocSwagger from 'express-jsdoc-swagger';
-import swaggerOptions from './lib/swaggerOptions';
 
 import logger, { loggerStream } from './lib/logger';
+import activateSwagger from './lib/swagger';
 
 import controller from './controller';
 import errorHandler from './lib/errorHandler';
@@ -31,6 +30,6 @@ const dbInit = async () => {
 };
 dbInit();
 
-expressJSDocSwagger(app)(swaggerOptions);
+activateSwagger(app);
 
 export default app;

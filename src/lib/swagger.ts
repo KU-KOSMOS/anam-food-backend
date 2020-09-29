@@ -1,3 +1,5 @@
+import { Express } from 'express';
+
 const options = {
     info: {
         version: '1.0.0',
@@ -18,4 +20,10 @@ const options = {
     baseDir: __dirname,
 };
 
-export default options;
+const activateSwagger = (app: Express) => {
+    // eslint-disable-next-line global-require
+    const expressJSDocSwagger = require('express-jsdoc-swagger');
+    expressJSDocSwagger(app)(options);
+};
+
+export default activateSwagger;
