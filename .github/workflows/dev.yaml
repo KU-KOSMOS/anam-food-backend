@@ -17,4 +17,4 @@ jobs:
                   script: |
                       cd ~/anam-food-backend
                       git pull
-                      docker-compose up -d --build
+                      nohup docker-compose up -d --build &
