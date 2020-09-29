@@ -34,6 +34,14 @@ export const getStoreList: RequestHandler = async (_req, res, next) => {
     }
 };
 
+/**
+ * GET /api/store/detail/{storeId}
+ * @summary get detail of store
+ * @tags Store
+ * @param {number} storeId.path.required - Id of store which want to get detail
+ * @return {Store} 200 - Success response - application/json
+ * @return {Error} 404 - Invalid Parameter
+ */
 export const getStoreDetail: RequestHandler = async (req, res, next) => {
     const { error, value } = await numberScheme.validate(req.query.storeId);
 
@@ -42,12 +50,12 @@ export const getStoreDetail: RequestHandler = async (req, res, next) => {
 
         const storeId = value;
 
-        const storeInfo = await Store.findOne({
+        const store = await Store.findOne({
             id: storeId,
             enabled: true,
         });
 
-        res.json({ storeInfo });
+        res.json(store);
     } catch (err) {
         next(err);
     }

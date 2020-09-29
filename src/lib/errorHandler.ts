@@ -1,5 +1,12 @@
 import { ErrorRequestHandler } from 'express';
 
+/**
+ * A Error Type
+ * @typedef {object} Error
+ * @property {number} statusCode
+ * @property {string} msg
+ */
+
 interface Error {
     statusCode: number;
     msg: string;
