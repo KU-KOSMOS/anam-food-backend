@@ -15,8 +15,12 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: '12'
-            - run: echo -e "${{secrets.ORM_CONFIG}}" > ormconfig.json
-            - run: cat ormconfig.json
+              env:
+                  ORM_HOST: ${{secrets.ORM_HOST}}
+                  ORM_PORT: ${{secrets.ORM_PORT}}
+                  ORM_USERNAME: ${{secrets.ORM_USERNAME}}
+                  ORM_PASSWORD: ${{secrets.ORM_PASSWORD}}
+                  ORM_DATABASE: ${{secrets.ORM_DATABASE}}
             - run: yarn
             - run: yarn test
             - run: yarn build
