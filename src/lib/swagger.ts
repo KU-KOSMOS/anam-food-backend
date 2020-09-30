@@ -15,7 +15,7 @@ const options = {
             scheme: 'basic',
         },
     },
-    filesPattern: '../**/*.[ts|js]',
+    filesPattern: '../**/*.ts',
     swaggerUIPath: '/api-docs',
     baseDir: __dirname,
 };

@@ -1,5 +1,19 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
+/**
+ * @typedef {object} Store
+ * @property {number} id
+ * @property {string} name
+ * @property {string} category
+ * @property {string} description
+ * @property {number} averageRating
+ * @property {string} location
+ * @property {string} location
+ * @property {string} workTime
+ * @property {string} pricingRange
+ * @property {boolean} enabled
+ */
+
 @Entity()
 class Store extends BaseEntity {
     @PrimaryGeneratedColumn()
