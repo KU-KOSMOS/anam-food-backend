@@ -12,7 +12,7 @@
         "pretest": "yarn eslint",
         "test": "cross-env NODE_ENV=test nyc mocha --exit -r ts-node/register test/**/*.spec.ts --timeout 100000",
         "precoverage": "yarn eslint",
-        "coverage": "NODE_ENV=test nyc --reporter=lcov mocha --exit -r ts-node/register test/**/*.spec.ts --timeout 100000&& codecov"
+        "coverage": "NODE_ENV=test nyc --reporter=lcov mocha --exit -r ts-node/register test/**/*.spec.ts --timeout 100000"
     },
     "repository": "https://github.com/KU-KOSMOS/anam-food-backend.git",
     "author": "BeLeap <changseo_jang@korea.ac.kr>",
