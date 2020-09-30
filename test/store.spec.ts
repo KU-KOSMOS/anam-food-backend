@@ -8,8 +8,6 @@ import Store from '../src/model/Store';
 
 const dpOption = require('../ormconfig.json');
 
-process.env.NODE_ENV = 'test';
-
 dpOption.logging = false;
 const { expect } = chai;
 
