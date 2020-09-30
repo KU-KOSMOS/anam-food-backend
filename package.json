@@ -8,7 +8,7 @@
         "start": "node dist/src/index.js",
         "prod": "cross-env NODE_ENV=production yarn start",
         "dev": "cross-env NODE_ENV=development nodemon --watch src --exec ts-node src/index.ts",
-        "test": "eslint src/**/*.ts"
+        "test": "eslint src/**/*.ts&& cross-env NODE_ENV=test mocha -r ts-node/register test/**/*.spec.ts --timeout 100000"
     },
     "repository": "https://github.com/KU-KOSMOS/anam-food-backend.git",
     "author": "BeLeap <changseo_jang@korea.ac.kr>",
@@ -16,6 +16,8 @@
     "private": false,
     "dependencies": {
         "@babel/polyfill": "^7.11.5",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
         "cors": "^2.8.5",
         "cross-env": "^7.0.2",
         "express": "^4.17.1",
@@ -35,6 +37,7 @@
         "@babel/plugin-transform-runtime": "^7.11.5",
         "@babel/preset-env": "^7.11.5",
         "@babel/preset-typescript": "^7.10.4",
+        "@babel/register": "^7.11.5",
         "@types/assert": "^1.5.2",
         "@types/cors": "^2.8.7",
         "@types/express": "^4.17.8",

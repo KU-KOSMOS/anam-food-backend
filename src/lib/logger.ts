@@ -8,6 +8,7 @@ const transport =
         ? [
               new transports.Console({
                   format: format.combine(format.colorize(), format.simple()),
+                  silent: NODE_ENV === 'test',
               }),
           ]
         : [
