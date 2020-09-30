@@ -1,4 +1,4 @@
-name: Test code
+name: Test code on pr
 on:
     pull_request:
         branches:
@@ -12,12 +12,15 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: '12'
-            - run: yarn
-            - run: yarn test
+            - name: Install Dependencies
+              run: yarn
+            - name: Run Test
+              run: yarn test
               env:
                   ORM_HOST: ${{secrets.ORM_HOST}}
                   ORM_PORT: ${{secrets.ORM_PORT}}
                   ORM_USERNAME: ${{secrets.ORM_USERNAME}}
                   ORM_PASSWORD: ${{secrets.ORM_PASSWORD}}
                   ORM_DATABASE: ${{secrets.ORM_DATABASE}}
-            - run: yarn build
+            - name: Build(Check Buildability)
+              run: yarn build

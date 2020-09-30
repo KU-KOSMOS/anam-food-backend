@@ -1,4 +1,4 @@
-name: Test code and Send Coverage
+name: Test code on push
 on:
     push:
         branches:
@@ -12,16 +12,20 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: '12'
-            - run: yarn
-            - run: yarn coverage
+            - name: Install Dependencies
+              run: yarn
+            - name: Test and Generate Report
+              run: yarn coverage
               env:
                   ORM_HOST: ${{secrets.ORM_HOST}}
                   ORM_PORT: ${{secrets.ORM_PORT}}
                   ORM_USERNAME: ${{secrets.ORM_USERNAME}}
                   ORM_PASSWORD: ${{secrets.ORM_PASSWORD}}
                   ORM_DATABASE: ${{secrets.ORM_DATABASE}}
-            - run: yarn build
-            - uses: codecov/codecov-action@v1
+            - name: Build(Check Buildability)
+              run: yarn build
+            - name: Upload Code Coverage Report
+              uses: codecov/codecov-action@v1
               with:
                   token: ${{secrets.CODECOV_TOKEN}}
                   directory: ./coverage

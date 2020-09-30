@@ -8,7 +8,8 @@ jobs:
     ssh-command-execute:
         runs-on: ubuntu-latest
         steps:
-            - uses: appleboy/ssh-action@master
+            - name: Run Command on Server
+              uses: appleboy/ssh-action@master
               with:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
