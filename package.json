@@ -8,7 +8,11 @@
         "start": "node dist/src/index.js",
         "prod": "cross-env NODE_ENV=production yarn start",
         "dev": "cross-env NODE_ENV=development nodemon --watch src --exec ts-node src/index.ts",
-        "test": "eslint src/**/*.ts&& cross-env NODE_ENV=test mocha -r ts-node/register test/**/*.spec.ts --timeout 100000"
+        "eslint": "eslint src/**/*.ts",
+        "pretest": "yarn eslint",
+        "test": "cross-env NODE_ENV=test nyc mocha --exit -r ts-node/register test/**/*.spec.ts --timeout 100000",
+        "precoverage": "yarn eslint",
+        "coverage": "NODE_ENV=test nyc --reporter=locv mocha --exit -r ts-node/register test/**/*.spec.ts --timout 100000&& codecov"
     },
     "repository": "https://github.com/KU-KOSMOS/anam-food-backend.git",
     "author": "BeLeap <changseo_jang@korea.ac.kr>",
@@ -48,6 +52,7 @@
         "@typescript-eslint/eslint-plugin": "^4.0.1",
         "@typescript-eslint/parser": "^4.0.1",
         "assert": "^2.0.0",
+        "codecov": "^3.7.2",
         "eslint": "^7.8.1",
         "eslint-config-airbnb-base": "^14.2.0",
         "eslint-config-prettier": "^6.11.0",
@@ -55,6 +60,7 @@
         "eslint-plugin-prettier": "^3.1.4",
         "mocha": "^8.1.3",
         "nodemon": "^2.0.4",
+        "nyc": "^15.1.0",
         "prettier": "^2.1.1",
         "ts-node": "^9.0.0",
         "tsc": "^1.20150623.0",
