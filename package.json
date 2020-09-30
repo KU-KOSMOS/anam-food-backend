@@ -52,7 +52,6 @@
         "@typescript-eslint/eslint-plugin": "^4.0.1",
         "@typescript-eslint/parser": "^4.0.1",
         "assert": "^2.0.0",
-        "codecov": "^3.7.2",
         "eslint": "^7.8.1",
         "eslint-config-airbnb-base": "^14.2.0",
         "eslint-config-prettier": "^6.11.0",
