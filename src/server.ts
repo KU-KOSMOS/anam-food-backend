@@ -22,6 +22,8 @@ const {
     ORM_DATABASE,
 } = process.env;
 
+const logging = NODE_ENV !== 'test';
+
 const dpOption: ConnectionOptions = {
     type: 'postgres',
     host: ORM_HOST,
@@ -30,7 +32,7 @@ const dpOption: ConnectionOptions = {
     password: ORM_PASSWORD,
     database: ORM_DATABASE,
     synchronize: true,
-    logging: true,
+    logging,
     entities: ['src/model/**/*.ts'],
 };
 
