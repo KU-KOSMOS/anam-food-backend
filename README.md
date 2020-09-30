@@ -1,6 +1,6 @@
 # anam-food-backend
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Known Vulnerabilities](https://snyk.io/test/github/KU-KOSMOS/anam-food-backend/badge.svg)](https://snyk.io/test/github/KU-KOSMOS/anam-food-backend)
 [![codecov](https://codecov.io/gh/KU-KOSMOS/anam-food-backend/branch/master/graph/badge.svg)](https://codecov.io/gh/KU-KOSMOS/anam-food-backend)
 
