@@ -27,7 +27,7 @@ class Store extends BaseEntity {
     @Column()
     description!: string;
 
-    @Column()
+    @Column('double precision')
     averageRating!: number;
 
     @Column()
