@@ -1,14 +1,29 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
-import { createConnection } from 'typeorm';
+import { ConnectionOptions, createConnection } from 'typeorm';
 
 import server from '../src/server';
 import Store from '../src/model/Store';
 
-const dpOption = require('../ormconfig.json');
+const {
+    ORM_HOST,
+    ORM_PORT,
+    ORM_USERNAME,
+    ORM_PASSWORD,
+    ORM_DATABASE,
+} = process.env;
 
-dpOption.logging = false;
+const dpOption: ConnectionOptions = {
+    type: 'postgres',
+    host: ORM_HOST,
+    port: parseInt(ORM_PORT as string, 10),
+    username: ORM_USERNAME,
+    password: ORM_PASSWORD,
+    database: ORM_DATABASE,
+    logging: false,
+};
+
 const { expect } = chai;
 
 chai.use(chaiHttp);
