@@ -8,7 +8,6 @@ import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
  * @property {string} description
  * @property {number} averageRating
  * @property {string} location
- * @property {string} location
  * @property {string} workTime
  * @property {string} pricingRange
  * @property {boolean} enabled
@@ -28,7 +27,7 @@ class Store extends BaseEntity {
     @Column()
     description!: string;
 
-    @Column()
+    @Column('double precision')
     averageRating!: number;
 
     @Column()

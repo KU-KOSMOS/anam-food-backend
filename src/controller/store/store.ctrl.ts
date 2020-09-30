@@ -3,7 +3,7 @@ import joi from 'joi';
 
 import Store from '../../model/Store';
 
-const numberScheme = joi.number();
+const numberScheme = joi.number().required();
 
 /**
  * A Store Type
@@ -43,7 +43,7 @@ export const getStoreList: RequestHandler = async (_req, res, next) => {
  * @return {Error} 404 - Invalid Parameter
  */
 export const getStoreDetail: RequestHandler = async (req, res, next) => {
-    const { error, value } = await numberScheme.validate(req.query.storeId);
+    const { error, value } = await numberScheme.validate(req.params.storeId);
 
     try {
         if (error) throw new Error('INVALID_PARAMETER');
