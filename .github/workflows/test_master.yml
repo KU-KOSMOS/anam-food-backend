@@ -1,6 +1,6 @@
-name: Test code
+name: Test code and Send Coverage
 on:
-    pull_request:
+    push:
         branches:
             - master
 
@@ -13,7 +13,7 @@ jobs:
               with:
                   node-version: '12'
             - run: yarn
-            - run: yarn test
+            - run: yarn coverage
               env:
                   ORM_HOST: ${{secrets.ORM_HOST}}
                   ORM_PORT: ${{secrets.ORM_PORT}}
@@ -21,3 +21,8 @@ jobs:
                   ORM_PASSWORD: ${{secrets.ORM_PASSWORD}}
                   ORM_DATABASE: ${{secrets.ORM_DATABASE}}
             - run: yarn build
+            - uses: codecov/codecov-action@v1
+              with:
+                  token: ${{secrets.CODECOV_TOKEN}}
+                  directory: ./coverage
+                  fail_ci_if_error: true
