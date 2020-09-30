@@ -79,7 +79,7 @@ describe('Stores', () => {
     });
 
     describe('GET /api/store/detail/:storeId', () => {
-        it('it should GET a book by the given storeId', async () => {
+        it('it should GET a store by the given storeId', async () => {
             const store = await Store.insert({
                 name: 'Store3',
                 category: 'Category3',
@@ -108,6 +108,33 @@ describe('Stores', () => {
             expect(res.body)
                 .to.have.property('id')
                 .to.equal(store.identifiers[0].id);
+        });
+
+        it('it should not GET store detail with non-number storeId', async () => {
+            const res = await chai
+                .request(server)
+                .get(`/api/store/detail/test`);
+
+            expect(res.status).to.equal(404);
+        });
+
+        it('it should not GET store detail with not existing storeId', async () => {
+            const store = await Store.insert({
+                name: 'Store3',
+                category: 'Category3',
+                description: 'This is Store 3',
+                averageRating: 3.5,
+                location: 'location string 3',
+                workTime: 'workTime string 3',
+                pricingRange: '2341-13213',
+                enabled: true,
+            });
+
+            const res = await chai
+                .request(server)
+                .get(`/api/store/detail/${store.identifiers[0].id + 1}`);
+
+            expect(res.status).to.equal(404);
         });
     });
 });

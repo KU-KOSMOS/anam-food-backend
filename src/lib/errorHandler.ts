@@ -21,6 +21,10 @@ const errorList: { [key: string]: Error } = {
         statusCode: 404,
         msg: 'Not Found',
     },
+    INVALID_PARAMETER: {
+        statusCode: 404,
+        msg: 'Invalid Parameter',
+    },
 };
 
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {

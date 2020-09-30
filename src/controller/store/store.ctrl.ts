@@ -54,6 +54,7 @@ export const getStoreDetail: RequestHandler = async (req, res, next) => {
             id: storeId,
             enabled: true,
         });
+        if (!store) throw new Error('NOT_FOUND');
 
         res.json(store);
     } catch (err) {
