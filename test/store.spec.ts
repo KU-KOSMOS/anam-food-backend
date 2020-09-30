@@ -22,6 +22,7 @@ const dpOption: ConnectionOptions = {
     password: ORM_PASSWORD,
     database: ORM_DATABASE,
     logging: false,
+    entities: ['src/model/**/*.ts'],
 };
 
 const { expect } = chai;
