@@ -3,7 +3,7 @@ import chaiHttp from 'chai-http';
 
 import { ConnectionOptions, createConnection } from 'typeorm';
 
-import server from '../src/server';
+import server from '../src/app';
 import Store from '../src/model/Store';
 
 const {
