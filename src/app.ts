@@ -6,7 +6,7 @@ import './env';
 import { createConnection, ConnectionOptions } from 'typeorm';
 
 import logger, { loggerStream } from './lib/logger';
-import activateSwagger from './lib/swagger';
+import activateSwagger from './lib/activateSwagger';
 
 import controller from './controller';
 import errorHandler from './lib/errorHandler';
