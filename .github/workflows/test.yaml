@@ -5,38 +5,37 @@ on:
             - master
 
 jobs:
-  test-code:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12'
-      - name: Install Dependencies
-        run: yarn
-      - name: Run Test
-        run: yarn test
-        env:
-          ORM_HOST: ${{secrets.ORM_HOST}}
-          ORM_PORT: ${{secrets.ORM_PORT}}
-          ORM_USERNAME: ${{secrets.ORM_USERNAME}}
-          ORM_PASSWORD: ${{secrets.ORM_PASSWORD}}
-          ORM_DATABASE: ${{secrets.ORM_DATABASE}}
-  build-code:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build(Check Buildability)
-        run: yarn build
-        name: Build
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    test-code:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: '12'
+            - name: Install Dependencies
+              run: yarn
+            - name: Run Test
+              run: yarn test
+              env:
+                  ORM_HOST: ${{secrets.ORM_HOST}}
+                  ORM_PORT: ${{secrets.ORM_PORT}}
+                  ORM_USERNAME: ${{secrets.ORM_USERNAME}}
+                  ORM_PASSWORD: ${{secrets.ORM_PASSWORD}}
+                  ORM_DATABASE: ${{secrets.ORM_DATABASE}}
+    build-code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Build(Check Buildability)
+              run: yarn build
+    sonarcloud:
+        name: SonarCloud
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+            - name: SonarCloud Scan
+              uses: SonarSource/sonarcloud-github-action@master
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
