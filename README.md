@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/github/license/KU-KOSMOS/anam-food-backend?style=flat)](https://opensource.org/licenses/MIT)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/KU-KOSMOS/anam-food-backend/master?style=flat)](https://www.codefactor.io/repository/github/ku-kosmos/anam-food-backend)
-https://img.shields.io/lgtm/grade/javascript/github/KU-KOSMOS/anam-food-backend
+[![LGTM](https://img.shields.io/lgtm/grade/javascript/github/KU-KOSMOS/anam-food-backend)](https://lgtm.com/projects/g/KU-KOSMOS/anam-food-backend/alerts?mode=list)
 ![David](https://img.shields.io/david/KU-KOSMOS/anam-food-backend?style=flat)
 [![codecov](https://img.shields.io/codecov/c/github/KU-KOSMOS/anam-food-backend/master?style=flat)](https://codecov.io/gh/KU-KOSMOS/anam-food-backend)
 [![CodeQL](https://img.shields.io/github/workflow/status/KU-KOSMOS/anam-food-backend/CodeQL/master?label=CodeQL&style=flat)](https://github.com/KU-KOSMOS/anam-food-backend/actions?query=workflow%3ACodeQL)
