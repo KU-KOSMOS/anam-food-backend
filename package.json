@@ -29,7 +29,7 @@
         "express-jsdoc-swagger": "^1.0.5",
         "joi": "^17.2.1",
         "morgan": "^1.10.0",
-        "pg": "^8.3.3",
+        "pg": "^8.4.0",
         "reflect-metadata": "^0.1.13",
         "typeorm": "^0.2.26",
         "winston": "^3.3.3",
