@@ -18,6 +18,7 @@
     "author": "BeLeap <changseo_jang@korea.ac.kr>",
     "license": "MIT",
     "private": false,
+    "type": "module",
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
         "chai": "^4.2.0",
