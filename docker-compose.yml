@@ -1,6 +1,10 @@
 version: '3'
 
 services:
+    nginx:
+        build: ./nginx
+        ports:
+        - "80:80"
     db:
         image: postgres
         restart: always
@@ -10,14 +14,11 @@ services:
             - .env.db.docker
         ports:
             - '5432:5432'
-
     api:
         build:
             context: .
             dockerfile: ./Dockerfile
         restart: always
-        ports:
-            - '3000:3000'
         volumes:
             - ./logs:/anam-food-backend/logs
         command:
