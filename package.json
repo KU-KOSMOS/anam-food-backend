@@ -19,7 +19,7 @@
     "license": "MIT",
     "private": false,
     "dependencies": {
-        "@babel/polyfill": "^7.11.5",
+        "@babel/polyfill": "^7.12.1",
         "chai": "^4.2.0",
         "chai-http": "^4.3.0",
         "cors": "^2.8.5",
