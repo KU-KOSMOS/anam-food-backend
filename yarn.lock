@@ -2501,10 +2501,10 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-express-jsdoc-swagger@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/express-jsdoc-swagger/-/express-jsdoc-swagger-1.0.5.tgz#2a9dddf687f4419abc1f6c0722e2cf3a9f173168"
-  integrity sha512-ID10177G+rFFSG1DpdtnntfniynCacUy302F+UvLL6KmSrdxTPVk17wibixxpnrc9AsiFln9t9J0c+F/YDBqDw==
+express-jsdoc-swagger@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/express-jsdoc-swagger/-/express-jsdoc-swagger-1.1.1.tgz#0900dfb743f56cf0c6d93e40472c6fc7bc47705c"
+  integrity sha512-Pd2EeYWRGkyHvoLV2jsV1Nq/QbqwB5HmtZVQW4OgMy/tfjcitVLT9FlWeQqslndsoZDw698to3gsvCqbRwQN5g==
   dependencies:
     chalk "^4.1.0"
     doctrine "^3.0.0"
