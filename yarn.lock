@@ -2501,16 +2501,16 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-express-jsdoc-swagger@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/express-jsdoc-swagger/-/express-jsdoc-swagger-1.1.1.tgz#0900dfb743f56cf0c6d93e40472c6fc7bc47705c"
-  integrity sha512-Pd2EeYWRGkyHvoLV2jsV1Nq/QbqwB5HmtZVQW4OgMy/tfjcitVLT9FlWeQqslndsoZDw698to3gsvCqbRwQN5g==
+express-jsdoc-swagger@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/express-jsdoc-swagger/-/express-jsdoc-swagger-1.1.3.tgz#566c5823dcda7a50b3218441a1fc81924d340d0c"
+  integrity sha512-uf6mq2lY0qnyAdNBl3n8ARdJpAurtSG1rcgvTTTmEVkweewPut4JYE0TF1owg4EdG2BTwvCHaZcBINLzI9r9vQ==
   dependencies:
     chalk "^4.1.0"
     doctrine "^3.0.0"
     express "^4.17.1"
     glob "^7.1.6"
-    merge "^1.2.1"
+    merge "^2.1.0"
     swagger-ui-express "^4.1.4"
 
 express@^4.17.1:
@@ -3813,10 +3813,10 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-merge@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
-  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
+merge@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-2.1.0.tgz#91fff62458ba2eca378dd395fa85f1690bf87f60"
+  integrity sha512-TcuhVDV+e6X457MQAm7xIb19rWhZuEDEho7RrwxMpQ/3GhD5sDlnP188gjQQuweXHy9igdke5oUtVOXX1X8Sxg==
 
 methods@^1.1.1, methods@^1.1.2, methods@~1.1.2:
   version "1.1.2"
